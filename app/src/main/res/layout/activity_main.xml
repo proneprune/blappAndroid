@@ -13,6 +13,20 @@
     <!--creates the button with the text "Click to scan"-->
 
     <!--creates the text for the name of the application "spilled"-->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <fragment
+        android:name="com.google.ar.sceneform.ux.ArFragment"
+        android:id="@+id/ar_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"/>
+    </LinearLayout>
     <View
         android:id="@+id/rectangle_1"
         android:layout_width="944dp"
@@ -57,11 +71,14 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="370dp"
-        android:layout_height="249dp"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="466dp"
+        android:layout_width="399dp"
+        android:layout_height="722dp"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="0dp"
         tools:src="@tools:sample/avatars" />
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

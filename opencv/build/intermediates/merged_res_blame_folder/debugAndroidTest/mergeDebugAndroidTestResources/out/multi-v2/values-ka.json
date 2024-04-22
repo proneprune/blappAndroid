@@ -1,0 +1,43 @@
+{
+    "logs": [
+        {
+            "outputFile": "org.opencv.test.opencv-mergeDebugAndroidTestResources-7:/values-ka/values-ka.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\leoha\\.gradle\\caches\\transforms-3\\e6fae5e47c83946caf143fe6b2e182bf\\transformed\\core-1.0.0\\res\\values-ka\\values-ka.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "7",
+                        "startColumns": "4",
+                        "startOffsets": "506",
+                        "endColumns": "100",
+                        "endOffsets": "602"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\leoha\\.gradle\\caches\\transforms-3\\0d47bef1611c1c28abd197283a97adc3\\transformed\\jetified-core-1.29.0\\res\\values-ka\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8",
+                        "startColumns": "0,0,0,0,0",
+                        "startOffsets": "190,239,292,411,532",
+                        "endColumns": "48,52,118,120,88",
+                        "endOffsets": "238,291,410,531,620"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,108,165,288,413",
+                        "endColumns": "52,56,122,124,92",
+                        "endOffsets": "103,160,283,408,501"
+                    }
+                }
+            ]
+        }
+    ]
+}

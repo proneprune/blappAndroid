@@ -53,6 +53,7 @@ android {
 
 dependencies {
 
+    implementation(libs.arcore)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -63,6 +64,20 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(project(":opencv"))
     implementation(libs.androidx.constraintlayout)
+    implementation("com.google.ar.sceneform:rendering:1.17.1"){
+        exclude(group = "com.android.support")
+    }
+    implementation("com.google.ar.sceneform:core:1.17.1"){
+        exclude(group = "com.android.support")
+    }
+    implementation("com.google.ar.sceneform.ux:sceneform-ux:1.17.1"){
+        exclude(group = "com.android.support")
+    }
+    implementation("androidx.appcompat:appcompat:1.6.1"){
+        exclude(group = "com.android.support")
+    }
+
+    implementation ("com.google.ar:core:1.26.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

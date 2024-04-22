@@ -1,0 +1,11 @@
+org.opencv.test.opencv-jetified-core-1.29.0-0 C:\Users\leoha\.gradle\caches\transforms-3\0d47bef1611c1c28abd197283a97adc3\transformed\jetified-core-1.29.0\res
+org.opencv.test.opencv-coordinatorlayout-1.0.0-1 C:\Users\leoha\.gradle\caches\transforms-3\1a06a66153ad27b061e2113ece719e58\transformed\coordinatorlayout-1.0.0\res
+org.opencv.test.opencv-jetified-rendering-1.15.0-2 C:\Users\leoha\.gradle\caches\transforms-3\20507702e4747fc6f5a7297ea7cf9dc9\transformed\jetified-rendering-1.15.0\res
+org.opencv.test.opencv-jetified-sceneform-ux-1.15.0-3 C:\Users\leoha\.gradle\caches\transforms-3\695d8d3b4bafdf327c57b476226bfd16\transformed\jetified-sceneform-ux-1.15.0\res
+org.opencv.test.opencv-jetified-filament-android-1.15.0-4 C:\Users\leoha\.gradle\caches\transforms-3\7582b95aac2f67f2b4213a4ef1049427\transformed\jetified-filament-android-1.15.0\res
+org.opencv.test.opencv-core-1.0.0-5 C:\Users\leoha\.gradle\caches\transforms-3\e6fae5e47c83946caf143fe6b2e182bf\transformed\core-1.0.0\res
+org.opencv.test.opencv-androidTest-6 C:\Users\leoha\blappAndroid\blappAndroid\opencv\build\generated\res\resValues\androidTest\debug
+org.opencv.test.opencv-mergeDebugAndroidTestResources-7 C:\Users\leoha\blappAndroid\blappAndroid\opencv\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+org.opencv.test.opencv-mergeDebugAndroidTestResources-8 C:\Users\leoha\blappAndroid\blappAndroid\opencv\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+org.opencv.test.opencv-debugAndroidTest-9 C:\Users\leoha\blappAndroid\blappAndroid\opencv\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
+org.opencv.test.opencv-debug-10 C:\Users\leoha\blappAndroid\blappAndroid\opencv\build\intermediates\packaged_res\debug\packageDebugResources

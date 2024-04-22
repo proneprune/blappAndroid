@@ -1,0 +1,64 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="org.opencv.test" >
+4
+5    <uses-sdk
+5-->C:\Users\leoha\blappAndroid\blappAndroid\opencv\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16600789995141330349.xml:5:5-74
+6        android:minSdkVersion="21"
+6-->C:\Users\leoha\blappAndroid\blappAndroid\opencv\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16600789995141330349.xml:5:15-41
+7        android:targetSdkVersion="21" />
+7-->C:\Users\leoha\blappAndroid\blappAndroid\opencv\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16600789995141330349.xml:5:42-71
+8
+9    <instrumentation
+9-->C:\Users\leoha\blappAndroid\blappAndroid\opencv\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16600789995141330349.xml:11:5-15:65
+10        android:name="android.test.InstrumentationTestRunner"
+10-->C:\Users\leoha\blappAndroid\blappAndroid\opencv\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16600789995141330349.xml:11:22-75
+11        android:functionalTest="false"
+11-->C:\Users\leoha\blappAndroid\blappAndroid\opencv\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16600789995141330349.xml:14:22-52
+12        android:handleProfiling="false"
+12-->C:\Users\leoha\blappAndroid\blappAndroid\opencv\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16600789995141330349.xml:13:22-53
+13        android:label="Tests for org.opencv.test"
+13-->C:\Users\leoha\blappAndroid\blappAndroid\opencv\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16600789995141330349.xml:15:22-63
+14        android:targetPackage="org.opencv.test" />
+14-->C:\Users\leoha\blappAndroid\blappAndroid\opencv\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16600789995141330349.xml:12:22-61
+15
+16    <queries>
+16-->[com.google.ar:core:1.29.0] C:\Users\leoha\.gradle\caches\transforms-3\0d47bef1611c1c28abd197283a97adc3\transformed\jetified-core-1.29.0\AndroidManifest.xml:29:5-31:15
+17        <package android:name="com.google.ar.core" />
+17-->[com.google.ar:core:1.29.0] C:\Users\leoha\.gradle\caches\transforms-3\0d47bef1611c1c28abd197283a97adc3\transformed\jetified-core-1.29.0\AndroidManifest.xml:30:9-54
+17-->[com.google.ar:core:1.29.0] C:\Users\leoha\.gradle\caches\transforms-3\0d47bef1611c1c28abd197283a97adc3\transformed\jetified-core-1.29.0\AndroidManifest.xml:30:18-51
+18    </queries>
+19
+20    <application
+20-->C:\Users\leoha\blappAndroid\blappAndroid\opencv\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16600789995141330349.xml:7:5-9:19
+21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+21-->[androidx.core:core:1.0.0] C:\Users\leoha\.gradle\caches\transforms-3\e6fae5e47c83946caf143fe6b2e182bf\transformed\core-1.0.0\AndroidManifest.xml:22:18-86
+22        android:debuggable="true"
+23        android:extractNativeLibs="true" >
+24        <uses-library android:name="android.test.runner" />
+24-->C:\Users\leoha\blappAndroid\blappAndroid\opencv\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16600789995141330349.xml:8:9-60
+24-->C:\Users\leoha\blappAndroid\blappAndroid\opencv\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16600789995141330349.xml:8:23-57
+25        <!-- The minimal version code of ARCore APK required for an app using this SDK. -->
+26        <meta-data
+26-->[com.google.ar:core:1.29.0] C:\Users\leoha\.gradle\caches\transforms-3\0d47bef1611c1c28abd197283a97adc3\transformed\jetified-core-1.29.0\AndroidManifest.xml:36:9-38:41
+27            android:name="com.google.ar.core.min_apk_version"
+27-->[com.google.ar:core:1.29.0] C:\Users\leoha\.gradle\caches\transforms-3\0d47bef1611c1c28abd197283a97adc3\transformed\jetified-core-1.29.0\AndroidManifest.xml:37:13-62
+28            android:value="212840000" /> <!-- This activity is critical for installing ARCore when it is not already present. -->
+28-->[com.google.ar:core:1.29.0] C:\Users\leoha\.gradle\caches\transforms-3\0d47bef1611c1c28abd197283a97adc3\transformed\jetified-core-1.29.0\AndroidManifest.xml:38:13-38
+29        <activity
+29-->[com.google.ar:core:1.29.0] C:\Users\leoha\.gradle\caches\transforms-3\0d47bef1611c1c28abd197283a97adc3\transformed\jetified-core-1.29.0\AndroidManifest.xml:40:9-46:80
+30            android:name="com.google.ar.core.InstallActivity"
+30-->[com.google.ar:core:1.29.0] C:\Users\leoha\.gradle\caches\transforms-3\0d47bef1611c1c28abd197283a97adc3\transformed\jetified-core-1.29.0\AndroidManifest.xml:41:13-62
+31            android:configChanges="keyboardHidden|orientation|screenSize"
+31-->[com.google.ar:core:1.29.0] C:\Users\leoha\.gradle\caches\transforms-3\0d47bef1611c1c28abd197283a97adc3\transformed\jetified-core-1.29.0\AndroidManifest.xml:42:13-74
+32            android:excludeFromRecents="true"
+32-->[com.google.ar:core:1.29.0] C:\Users\leoha\.gradle\caches\transforms-3\0d47bef1611c1c28abd197283a97adc3\transformed\jetified-core-1.29.0\AndroidManifest.xml:43:13-46
+33            android:exported="false"
+33-->[com.google.ar:core:1.29.0] C:\Users\leoha\.gradle\caches\transforms-3\0d47bef1611c1c28abd197283a97adc3\transformed\jetified-core-1.29.0\AndroidManifest.xml:44:13-37
+34            android:launchMode="singleTop"
+34-->[com.google.ar:core:1.29.0] C:\Users\leoha\.gradle\caches\transforms-3\0d47bef1611c1c28abd197283a97adc3\transformed\jetified-core-1.29.0\AndroidManifest.xml:45:13-43
+35            android:theme="@android:style/Theme.Material.Light.Dialog.Alert" />
+35-->[com.google.ar:core:1.29.0] C:\Users\leoha\.gradle\caches\transforms-3\0d47bef1611c1c28abd197283a97adc3\transformed\jetified-core-1.29.0\AndroidManifest.xml:46:13-77
+36    </application>
+37
+38</manifest>
