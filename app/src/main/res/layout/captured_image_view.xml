@@ -31,7 +31,6 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
 
-
     <RelativeLayout
         android:id="@+id/relative_layout_1"
         android:layout_width="match_parent"
