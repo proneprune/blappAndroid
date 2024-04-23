@@ -48,6 +48,16 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    externalNativeBuild{
+        cmake{
+            path = file("cpp/CMakeLists.txt")
+            version = "3.22.1"
+            //cppFlags "-frtti", "-fexceptions"
+            //abiFilters = 'x86'; 'x86_64', 'armeabi-v7a', 'arm64-v8a'
+            //arguments "-DOpenCV_DIR=" + opencvsdk + "/sdk/native"
+        }
+    }
+
     buildToolsVersion = "34.0.0"
 }
 
