@@ -182,12 +182,16 @@ class MainActivity : ComponentActivity() {
             var pixels = findObjectArea(imageUri, imageX, imageY)
 
 
-            Toast.makeText(applicationContext, "total pixels: " + pixels ,Toast.LENGTH_LONG).show()
+           // Toast.makeText(applicationContext, "total pixels: " + pixels ,Toast.LENGTH_LONG).show()
 
             buttontoconfirm.setOnClickListener(){
             val bloodpoolarea = areaperpixel*pixels
 
-                Toast.makeText(applicationContext, "bloodpool area is: " + bloodpoolarea ,Toast.LENGTH_LONG).show()
+            setContentView(R.layout.area_of_blood)
+                val Textviewarea = findViewById<TextView>(R.id.textView)
+                Textviewarea.text = "The area of the bloodpool is $bloodpoolarea cm²"
+
+            //    Toast.makeText(applicationContext, "bloodpool area is: " + bloodpoolarea ,Toast.LENGTH_LONG).show()
 
 
 
