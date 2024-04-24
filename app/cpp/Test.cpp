@@ -186,7 +186,9 @@ std::vector<std::vector<cv::Point>> getContours(cv::Mat& image, int invert, int 
     */
 
     cv::Mat blurredImage;
+
     cv::GaussianBlur(gray, blurredImage, cv::Size(1, 1), 0, 0 );
+
 
     // Apply Canny edge detection
     cv::Mat edges;
