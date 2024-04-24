@@ -511,6 +511,22 @@ Java_com_example_blodpool_MainActivity_cvTest(JNIEnv *env, jobject thiz, jlong m
     resMat = findObject(mat, x, y);
 }
 
+extern "C"
+JNIEXPORT jint JNICALL
+Java_com_example_blodpool_MainActivity_findArea(JNIEnv *env, jobject thiz, jlong mat_addy, jint x_addy, jint y_addy) {
+
+    cv::Mat &mat = *(cv::Mat*) mat_addy;
+
+    cv::rotate(mat, mat, cv::ROTATE_90_CLOCKWISE);
+
+    int x = static_cast<int>(x_addy);
+    int y = static_cast<int>(y_addy);
+
+    int pixels = findObjectArea(mat, x, y);
+
+    return pixels;
+}
+
 
 int main() {
 

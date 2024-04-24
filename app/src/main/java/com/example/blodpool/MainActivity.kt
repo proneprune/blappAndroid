@@ -28,6 +28,8 @@ class MainActivity : ComponentActivity() {
 
     external fun getTest() : String
 
+    external fun findArea(mat_addy: Long, x_addy: Int, y_addy: Int) : Int
+
     external fun cvTest(mat_addy: Long, mat_addy_res: Long, x_addy: Int, y_addy: Int)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,13 +37,9 @@ class MainActivity : ComponentActivity() {
 
         System.loadLibrary("testcpp")
 
-
-
-
         displayFrontpage()
 
         OpenCVLoader.initDebug()
-
 
         Toast.makeText(applicationContext,getTest(),Toast.LENGTH_LONG).show()
 
@@ -101,14 +99,14 @@ class MainActivity : ComponentActivity() {
         val mat = Mat()
         Utils.bitmapToMat(initialImage, mat)
 
-        Toast.makeText(applicationContext,mat.toString(),Toast.LENGTH_LONG).show()
+      //  Toast.makeText(applicationContext,mat.toString(),Toast.LENGTH_LONG).show()
 
         val resMat = Mat()
 
         cvTest(mat.nativeObjAddr, resMat.nativeObjAddr, xPos, yPoS)
 
 
-        Toast.makeText(applicationContext,resMat.toString(),Toast.LENGTH_LONG).show()
+       // Toast.makeText(applicationContext,resMat.toString(),Toast.LENGTH_LONG).show()
 
         val resultBitmap = Bitmap.createBitmap(resMat.cols(), resMat.rows(), Bitmap.Config.ARGB_8888)
         Utils.matToBitmap(resMat, resultBitmap)
@@ -116,6 +114,17 @@ class MainActivity : ComponentActivity() {
         return resultBitmap
     }
 
+    fun findObjectArea(initialUri: Uri, xPos: Int, yPoS: Int): Int{
+
+        var initialImage = Bitmap.createBitmap(MediaStore.Images.Media.getBitmap(getContentResolver(), initialUri));
+
+
+        val mat = Mat()
+        Utils.bitmapToMat(initialImage, mat)
+
+        return findArea(mat.nativeObjAddr, xPos, yPoS)
+
+    }
 
 
     //@Deprecated
@@ -178,6 +187,10 @@ class MainActivity : ComponentActivity() {
 
                 image.setImageBitmap(resultBitmap)
                 //image.setRotation(90F);
+
+                var pixels = findObjectArea(imageUri, imageX, imageY)
+
+                Toast.makeText(applicationContext, "total pixels: " + pixels ,Toast.LENGTH_LONG).show()
 
                 true
             }
