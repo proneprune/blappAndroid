@@ -127,6 +127,84 @@ class MainActivity : ComponentActivity() {
     }
 
 
+    fun displaychooseblood(areaperpixel: Float ){
+        setContentView(R.layout.choose_blood)
+
+
+        val mRelativeLayout = findViewById<RelativeLayout>(R.id.relative_layout_1)
+
+        val mTextViewX = findViewById<TextView>(R.id.text_view_1)
+        val mTextViewY = findViewById<TextView>(R.id.text_view_2)
+        val image = findViewById<ImageView>(R.id.captured_image)
+
+
+
+        //  val bitmap = (data?.extras?.get("data")) as Bitmap
+
+        // image.setImageBitmap(bitmap)
+        image.setImageURI(imageUri)
+
+        //  Toast.makeText(applicationContext,"took photo!",Toast.LENGTH_LONG).show()
+
+        // When relative layout is touched
+        val buttontoconfirm = findViewById<Button>(R.id.button2)
+
+
+        mRelativeLayout.setOnTouchListener { _, motionEvent ->
+            val imageWidth = image.drawable.intrinsicWidth
+            val imageHeight = image.drawable.intrinsicHeight
+
+            // X and Y values are fetched relative to the view (mRelativeLayout)
+            val mX = motionEvent.x
+            val mY = motionEvent.y
+
+            // X and Y values are
+            // displayed in the TextView
+            // mTextViewX.text = "X: $mX"
+            // mTextViewY.text = "Y: $mY"
+
+            // Calculate the corresponding coordinates relative to the original image
+            val imageX = (mX / image.width.toFloat() * imageWidth).toInt()
+            val imageY = (mY / image.height.toFloat() * imageHeight).toInt()
+
+            println("X: $imageX")
+            println("Y: $imageY")
+
+            // Display the coordinates relative to the original image
+            mTextViewX.text = "X: $imageX"
+            mTextViewY.text = "Y: $imageY"
+
+            val resultBitmap = selectObjectImage(imageUri, imageX, imageY)
+
+            image.setImageBitmap(resultBitmap)
+            //image.setRotation(90F);
+
+            var pixels = findObjectArea(imageUri, imageX, imageY)
+
+
+            Toast.makeText(applicationContext, "total pixels: " + pixels ,Toast.LENGTH_LONG).show()
+
+            buttontoconfirm.setOnClickListener(){
+            val bloodpoolarea = areaperpixel*pixels
+
+                Toast.makeText(applicationContext, "bloodpool area is: " + bloodpoolarea ,Toast.LENGTH_LONG).show()
+
+
+
+            }
+
+
+            true
+        }
+
+
+
+
+
+
+    }
+
+
     //@Deprecated
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?){
         super.onActivityResult(requestCode, resultCode, data)
@@ -156,7 +234,7 @@ class MainActivity : ComponentActivity() {
           //  Toast.makeText(applicationContext,"took photo!",Toast.LENGTH_LONG).show()
 
             // When relative layout is touched
-
+            val buttontoconfirm = findViewById<Button>(R.id.button2)
 
 
             mRelativeLayout.setOnTouchListener { _, motionEvent ->
@@ -189,11 +267,21 @@ class MainActivity : ComponentActivity() {
                 //image.setRotation(90F);
 
                 var pixels = findObjectArea(imageUri, imageX, imageY)
+                val areaperpixel = 46.75f/pixels
 
                 Toast.makeText(applicationContext, "total pixels: " + pixels ,Toast.LENGTH_LONG).show()
 
+                buttontoconfirm.setOnClickListener(){
+                    displaychooseblood(areaperpixel)
+
+
+                }
+
+
                 true
             }
+
+
 
 
 
