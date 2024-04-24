@@ -143,26 +143,50 @@ cv::Mat applyMask(const cv::Mat& image, const cv::Mat& mask) {
     return resultImage;
 }
 
-std::vector<std::vector<cv::Point>> getContours(cv::Mat& image, int invert, int retr) {
+cv::Mat getEdges(cv::Mat image) {
     cv::Mat gray;
     cv::cvtColor(image, gray, cv::COLOR_BGR2GRAY);
 
-    cv::Mat equalizedImage;
-    cv::equalizeHist(gray, equalizedImage);
+    cv::Mat blurredImage;
+    cv::GaussianBlur(gray, blurredImage, cv::Size(5, 5), 1.5);
+
+    // Apply Canny edge detection
+    cv::Mat edges;
+    cv::Canny(blurredImage, edges, 50, 135);
+
+    cv::Mat dilatedEdges;
+    cv::dilate(edges, dilatedEdges, cv::Mat(), cv::Point(-1, -1), 8);
+
+    return dilatedEdges;
+}
+
+std::vector<std::vector<cv::Point>> getContours(cv::Mat& image, int invert, int retr) {
+    //cv::Mat filteredImage;
+    //cv::bilateralFilter(image, filteredImage, 9, 75, 75);  // Adjust parameters as needed
+    //image = filteredImage;
+
+    cv::Mat gray;
+    cv::cvtColor(image, gray, cv::COLOR_BGR2GRAY);
+
+    //cv::Mat equalizedImage;
+    //cv::equalizeHist(gray, equalizedImage);
 
     // Threshold the grayscale image to create a binary mask
+
+    /*
     cv::Mat mask;
     if (invert == 0){
-        cv::threshold(equalizedImage, mask, 0, 255, cv::THRESH_OTSU);
+        cv::threshold(gray, mask, 0, 255, cv::THRESH_OTSU);
     } else {
-        cv::threshold(equalizedImage, mask, 0, 255, cv::THRESH_BINARY_INV | cv::THRESH_OTSU);
+        cv::threshold(gray, mask, 0, 255, cv::THRESH_BINARY_INV | cv::THRESH_OTSU);
     }
 
     int padSize = 1; // adjust the padding size as needed
     cv::Mat paddedImage = padImage(mask, padSize);
+    */
 
     cv::Mat blurredImage;
-    cv::GaussianBlur(paddedImage, blurredImage, cv::Size(5, 5), 1.5);
+    cv::GaussianBlur(gray, blurredImage, cv::Size(5, 5), 1.5);
 
     // Apply Canny edge detection
     cv::Mat edges;
@@ -173,11 +197,11 @@ std::vector<std::vector<cv::Point>> getContours(cv::Mat& image, int invert, int 
 
     // Apply dilation to enhance edges
     cv::Mat dilatedEdges;
-    cv::dilate(edges, dilatedEdges, cv::Mat(), cv::Point(-1, -1), 1);
+    cv::dilate(edges, dilatedEdges, cv::Mat(), cv::Point(-1, -1), 8);
 
     // Find contours in the mask
     std::vector<std::vector<cv::Point>> contours;
-    if (invert == 0) {
+    if (invert == 1) {
         cv::findContours(dilatedEdges, contours, cv::RETR_CCOMP, cv::CHAIN_APPROX_SIMPLE);
     }
     else {
@@ -653,6 +677,7 @@ cv::Mat identifyColor(cv::Mat image, int x, int y) {
 
 
 
+
 extern "C"
 JNIEXPORT void JNICALL
 Java_com_example_blodpool_MainActivity_cvTest(JNIEnv *env, jobject thiz, jlong mat_addy, jlong mat_addy_res, jint x_addy, jint y_addy) {
@@ -669,6 +694,8 @@ Java_com_example_blodpool_MainActivity_cvTest(JNIEnv *env, jobject thiz, jlong m
     int y = static_cast<int>(y_addy);
 
     resMat = findObject(mat, x, y);
+
+    //resMat = getEdges(mat);
 }
 
 extern "C"
